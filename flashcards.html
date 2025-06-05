@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточки-перевертыши: Строение клетки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+        }
+        .card {
+            perspective: 1000px;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            padding-top: 140%; /* 1:1.4 ratio */
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-size: 1rem;
+        }
+        .front {
+            background-color: #1e3a8a; /* темно-синий */
+            color: #ffffff;
+        }
+        .back {
+            background-color: #facc15; /* желтый */
+            color: #1e3a8a;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+<div class="grid">
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">1. Как называется основная структурная единица живых организмов?</div>
+            <div class="card-face back">Клетка</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">2. Как называется оболочка, окружающая клетку?</div>
+            <div class="card-face back">Клеточная мембрана</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">3. Где в клетке хранится наследственная информация?</div>
+            <div class="card-face back">В ядре</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">4. Как называются "фабрики энергии" клетки?</div>
+            <div class="card-face back">Митохондрии</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">5. Что находится внутри ядра и состоит из ДНК?</div>
+            <div class="card-face back">Хромосомы</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">6. Как называется жидкая среда, заполняющая клетку?</div>
+            <div class="card-face back">Цитоплазма</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">7. Какой органоид отвечает за синтез белков?</div>
+            <div class="card-face back">Рибосомы</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">8. Где в клетке происходит фотосинтез у растений?</div>
+            <div class="card-face back">В хлоропластах</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">9. Как называются маленькие пузырьки для хранения веществ?</div>
+            <div class="card-face back">Вакуоли</div>
+        </div>
+    </div>
+    <div class="card" onclick="this.classList.toggle('flipped');">
+        <div class="card-inner">
+            <div class="card-face front">10. Как называется наружный слой клеток растений, придающий прочность?</div>
+            <div class="card-face back">Клеточная стенка</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
